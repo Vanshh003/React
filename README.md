@@ -20,6 +20,7 @@
 - Host app on HTTPs
 - Tree Shaking - remove unused code
 - Different dev and prod bundles
+- Transcompile
 
 
 read more on https://parceljs.org 
