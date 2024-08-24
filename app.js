@@ -1,35 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom/client"
 
-// React Element
-const heading = (
-	<h1 id="heading" className="head" tabIndex="5">
-		it's react using jsx
-	</h1>
-);
-
-
-
-// React Functional Component
-const HeadingComponent = () => (
-	<h1 className="heading">React Functional Component</h1>
-);
-
-// ⬆️ same as ⬇️ 
-
-const HeadingComponent2 = () => {
-	return <h1 className="heading">React Functional Component</h1>
+// React Component
+const Title = function() {
+	return (
+		<h1 id="heading" className="head" tabIndex="5">
+			it's react using jsx... Title Component
+		</h1>
+	)
 };
 
-// ⬆️ same as ⬇️ 
 
-const HeadingComponent3 = () => <h1 className="heading">React Functional Component</h1>;
-
-
-
-// it can also return multiple react elements
-const HeadingComponent4 = () => (
+// Component Composition
+const HeadingComponent = () => (
 	<div id="container">
+		{/* to render Title Component into this HeadingComponent.. i.e. all that Title Component code will come here */}
+		<Title />		
 		<h1 className="heading">React Functional Component</h1>
 	</div>
 );
