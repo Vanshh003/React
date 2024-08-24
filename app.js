@@ -1,34 +1,46 @@
 import React from "react";
 import ReactDOM from "react-dom/client"
-import { jsx } from "react/jsx-runtime";
 
-
-// React.createElement => Object => HTML Element(render)
-
-// in react
-const heading = React.createElement(                      // takes 3 arguments.. which tag, an object, what to put inside that tag
-    "div",                   // name of tag
-    {id: "parent"},          // attributes
-    "it's react"			 // children
+// React Element
+const heading = (
+	<h1 id="heading" className="head" tabIndex="5">
+		it's react using jsx
+	</h1>
 );
 
-console.log(heading);     // object
+
+
+// React Functional Component
+const HeadingComponent = () => (
+	<h1 className="heading">React Functional Component</h1>
+);
+
+// ⬆️ same as ⬇️ 
+
+const HeadingComponent2 = () => {
+	return <h1 className="heading">React Functional Component</h1>
+};
+
+// ⬆️ same as ⬇️ 
+
+const HeadingComponent3 = () => <h1 className="heading">React Functional Component</h1>;
+
+
+
+// it can also return multiple react elements
+const HeadingComponent4 = () => (
+	<div id="container">
+		<h1 className="heading">React Functional Component</h1>
+	</div>
+);
 
 
 
 
-// JSX - HTML-like or XML-like syntax
-// JSX (transocmpiled before it reaches the js engine) - PARCEL - Babel
-// JSX => React.createElement => ReactElement - JS Object => HTML Element (render)
 
-// in jsx
-const jsxHeading = <h1 id="heading">it's react using jsx</h1>
-
-console.log(jsxHeading);
-
-
+ 
 // now put this heading in/under this div id=root
 const root = ReactDOM.createRoot(document.getElementById("root"));    
 
-// render our heading inside that root
-root.render(jsxHeading);
+// render our heading component inside that root
+root.render(<HeadingComponent />);
